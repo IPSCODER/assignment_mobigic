@@ -24,7 +24,7 @@ const Login = () => {
     const submitHandler = async (e) =>{
         e.preventDefault();
         if (!loginData.username == "" && !loginData.password == "") {
-            await axios.post("http://localhost:5000/user/signin",{username:loginData.username,password:loginData.password}).then((resp)=>{   
+            await axios.post("https://mg-fxx9.onrender.com/user/signin",{username:loginData.username,password:loginData.password}).then((resp)=>{   
                 {typeof(resp.data) == 'string' && setAlert(resp.data) }
                 localStorage.setItem("name",resp.data.result.username)
                 setLogin(true)

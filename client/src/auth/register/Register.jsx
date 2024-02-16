@@ -24,7 +24,7 @@ const Register = () => {
     const submitHandler = async (e) =>{
         e.preventDefault();
         if (!registerData.username == "" && !registerData.password == "" && registerData.password.length == 6 && registerData.username.length > 5 ) {
-            await axios.post("http://localhost:5000/user/signup",{username:registerData.username,password:registerData.password}).then((resp)=>{    
+            await axios.post("https://mg-fxx9.onrender.com/user/signup",{username:registerData.username,password:registerData.password}).then((resp)=>{    
                 {typeof(resp.data) == 'string' && setAlert(resp.data) }
             localStorage.setItem("name",resp.data.result.username)
             setLogin(true)

@@ -91,7 +91,7 @@ getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
 
   const getData = async () =>{
 
-    await axios.post("http://localhost:5000/user/imageget",{username:localStorage.getItem("name")}).then((resp)=>{
+    await axios.post("https://mg-fxx9.onrender.com/user/imageget",{username:localStorage.getItem("name")}).then((resp)=>{
       setImageData(resp.data.result)
     }).catch((err)=>{
       console.log(err);
@@ -109,7 +109,7 @@ getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
   const submitImage = async (e) =>{ 
     e.preventDefault();
     try{
-        await axios.post("http://localhost:5000/user/imagepost",{...inputs,username:localStorage.getItem("name")});
+        await axios.post("https://mg-fxx9.onrender.com/user/imagepost",{...inputs,username:localStorage.getItem("name")});
         // window.location.reload();
         setImg(undefined)
         setImgPerc(0)
@@ -125,7 +125,7 @@ getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
 
    const comfirmDownload = async (url) =>{
     try{
-      await axios.post("http://localhost:5000/user/imagedownload",{username:localStorage.getItem("name"),password:comfirmInput}).then((resp)=>{
+      await axios.post("https://mg-fxx9.onrender.com/user/imagedownload",{username:localStorage.getItem("name"),password:comfirmInput}).then((resp)=>{
         console.log();
 
         if (resp.data.result === true) {
@@ -153,7 +153,7 @@ getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
     console.log(_id);
 
     try{
-      await axios.post("http://localhost:5000/user/imagedelete",{username:localStorage.getItem("name"),password:comfirmInput,_id:_id}).then((resp)=>{
+      await axios.post("https://mg-fxx9.onrender.com/user/imagedelete",{username:localStorage.getItem("name"),password:comfirmInput,_id:_id}).then((resp)=>{
         console.log(resp.data.result);
 
         if (resp.data.result === true) {

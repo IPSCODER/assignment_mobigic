@@ -1,0 +1,15 @@
+.alert{
+    min-width: 10.41vw;
+    height: 5.20vw;
+    border: 0.05vw solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0.26vw;
+    right: 0.26vw;
+    border-radius: 0.26vw;
+    background-color: #ffffff;
+    padding: 0 3%;
+    z-index: 99999999;
+}
